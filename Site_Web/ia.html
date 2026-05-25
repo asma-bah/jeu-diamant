@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="fr-FR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="site parlant du jeu diamant">
+        <meta name="identifiant" content="concretisation" >
+        <title>JeuDiamant</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <header>
+            <h1>Intelligence artificielle</h1>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="index.html"> Présentation </a></li>
+                <li><a href="jeu.html">Développement</a></li>
+                <li><a href="ia.html"> IA </a></li>
+                <li><a href="nous.html">A propos ! </a></li>
+            </ul>
+        </nav>
+        <main>
+            <h2>La première stratégie : </h2>
+            <p>
+                Nous avons au début pensé à faire la stratégie de notre IA uniquement basée sur l'aléatoire, 
+                mais comme on le sait, le hasard n'est pas souvent une bonne chose, alors on a vite oublié cette idée. 
+                Après un peu de réflexion, nous avons décidé de passer par l'apprentissage automatique, tenté d'utiliser sklearn et pandas
+                afin de faire en sorte que l'IA puisse s'adapter au joueur. 
+            </p>
+
+            <h2>La deuxième stratégie : </h2>
+
+            <p>
+                Durant les deux premières semaines, nous nous sommes concentrés sur l'utilisation de sklearn et de pandas. À l'aide de quelques
+                vidéos YouTube, notamment celle de <a href = "https://www.youtube.com/watch?v=82KLS2C_gNQ&list=PLO_fdPEVlfKqMDNmCFzQISI2H_nJcEDJq">
+                Machine learnia </a>,  ce qui nous a beaucoup servi afin de comprendre et d'appliquer les méthodes et les exercices nécessaires
+                pour réussir. 
+            </p>
+            <p>
+                Cependant, une erreur difficile est survenue lors de l'exécution du code, une erreur qui persista durant plusieurs jours.
+                D'abord, il faut comprendre les deux modules utilisés lors de cette stratégie avant de montrer le bout de code et l'erreur
+                en question. <br>
+                <b>pandas</b> est un outil d'analyse et de manipulation de données open source rapide, puissant, flexible et facile 
+                à utiliser, construit à partir du langage de programmation Python, et <b>Scikit-learn</b> (ou sklearn en raccourci) 
+                est une bibliothèque pour l'apprentissage automatique (Machine Learning) et l'exploration de données basés sur Python. 
+            </p>
+            <div class = "strat_1">
+                <img src="Strat_IA_fail.png" alt="Photo de la première stratégie de l'IA">
+            </div>
+            <p>
+                Le but du bout de code ci-dessus pour but d'utiliser des données afin d'alimenter l'outil d'analyse pour qu'il soit 
+                capable de s'adapter en fonction de la situation, puis d'initialiser le modèle en intégrant RandomForestClassifier() 
+                puis d'entraîner le modèle, afin qu'il soit capable de faire prédiction par la suite.
+                Les données utilisées ont été réalisées sur Excel après plusieurs parties, en testant les probabilités d'apparitions des 
+                cartes, les manches et le résultat obtenu après chaque manche. 
+            </p>
+            <div class = "donnee">
+                <img src="donnee_utilise.png" alt="Photo des données utilisés">
+            </div>
+
+            <p>
+                L'image ci-dessus est la photo des données initialement prévues d'être utilisées. 
+            </p>
+
+            <p>
+                Cependant, un bug important surgi, en fait ce qu'il se passe, c'est qu'à l'aide de pandas, on récupère le fichier Excel que 
+                l'on intègre à la variable "data" (ligne 5) puis la variable "x" (ligne 7) comporte la suppression de la colonne "Result"
+                afin qu'il soit réutiliser par la suite, mais la colonne "Result" est introuvable, ce qui le reste des processus 
+                impossible à finir. Nous avons tenté 
+                différentes méthodes telles que changer les données du fichier Excel et modifier le code, mais rien n'y fait, on se devait de 
+                changer de stratégie.
+            </p>
+            
+            <h2>La troisième stratégie : </h2>
+            <p>
+                Le but de la troisième stratégie est de se concentrer sur un aspect plus déterminisme, après quelques tests personnels, 
+                nous avions remarqué qu'il fallait se concentrer sur les gains potentielles que l'IA pourrait gagner, faire prendre plus de 
+                risques, et sortir du jeu lorsque les chances de retomber sur une autre carte pièges augmenté.
+            </p>
+            <p> Notre stratégie est donc composés de trois parties.</p>
+            <h3>La première partie : </h3>   
+            <div class = "strat_1">
+                <img src="strat_final_1.png" alt="Photo la première composée de la strategie final">
+            </div>
+            <p>
+                Les cartes existantes sont définies en fonction du nombre de cartes pièges restantes, des reliques et de la dernière carte 
+                sortie. Cela nous permettra de prendre une décision éclairée quant à la suite. 
+            </p>
+
+            <h3> La deuxième partie : </h3>
+            <div class = "strat_1">
+                <img src="strat_final_2.png" alt="Photo la deuxième composée de la strategie final">
+            </div>
+
+            <p>
+                Pour cette deuxième partie de la stratégie, nous nous concentrons sur les deux premières manches. Tout le long, l'IA retourne
+                 vrai (donc continue) dès le début, l'IA ne sort que lorsqu'il y a une relique, lorsqu'il y a plus de deux cartes pièges tirées 
+                 ou plus de quatre rubis au sol, cela s'explique, car dans les premières parties, les gains amassés ne sont généralement pas 
+                 nombreux, les reliques sont très rares ce qui, certes est très dangereux comme méthode, mais cela fait partie de l'essence même
+                  de notre stratégie, <b>la prise de risque </b>, tout en étant, tout de même craintif de retomber sur une troisième cartes 
+                  pièges qui pourrait faire prendre beaucoup de gains, sinon l'IA continue la dernière carte sortie n'est ni une carte piège
+                  ni une relique.
+            </p>
+
+            <p> 
+                Généralement, les deux premières manches rapportent d'assez gros gains, ça nous permet de prendre encore plus de risque pour les
+                 trois dernières.
+            </p>
+
+            <h3> La troisième partie : </h3>
+            <div class = "strat_1">
+                <img src="strat_final_3.png" alt="Photo la troisième composée de la strategie final">
+            </div>
+
+            <p>
+                En ce qui concerne cette dernière partie, c'est globalement la même stratégie que précédemment présentée.
+                Cependant, le taux de prise de risque augmente, l'IA reste plus longtemps dans les manches restantes, et s'il y a 
+                trop de gains, l'IA sort de la manche afin de ne pas perdre tous les gains accumulés. Les avantages dans notre 
+                stratégie hormis le fait qu'il fonctionne, est que l'optimisation des gains et l'utilisation des informations de jeu
+                en temps réel pour ajuster les décisions, et les inconvénients sont le manque d'expérience l'IA ne s'améliore pas avec
+                l'expérience, la Prévisibilité et le manque d'aléatoire dans l'algorithme. 
+            </p>
+
+
+
+
+        </main>
+        <footer>
+            <p>&copy; Projet de Concrétisation 2023-2024, université d'angers</p>
+        </footer>
+    </body>
+</html>

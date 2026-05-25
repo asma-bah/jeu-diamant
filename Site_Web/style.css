@@ -1,0 +1,118 @@
+
+body{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 0;
+}
+
+header{
+     height: 150px;
+     background-color: rgb(43, 21, 0);
+}
+
+header h1{
+    font-size: 44px;
+    font-family:"Lucida Console", Courier, monospace;
+    line-height: 100px;
+    text-align: center;
+    color: rgb(238, 240, 239);
+    text-transform: uppercase;
+}
+
+footer{
+    height: 80px;
+    background-color:  rgb(43, 21, 0);
+    line-height: 45px;
+    font-size: 12px;
+    text-align: center;
+    text-transform: uppercase;
+    color: rgb(238, 240, 239);
+    margin: 0;
+    font-family:Times, "Times New Roman", Georgia, serif ;
+}
+
+main{
+    display: block;
+    flex-direction: column;
+    text-align: center;
+    font-size: 18px;
+    background-color: rgb(231, 224, 217);
+    font-family: Arial, Helvetica, sans-serif;
+    
+}
+
+nav{
+    height: 30px;
+    background-color: rgb(122, 84, 84);
+}
+nav ul{
+    list-style-type: none;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+nav ul li{
+    margin: 0;
+    padding: 0 20px;
+    line-height: 30px;
+}
+
+nav ul li a{
+    text-decoration: underline;
+    font-weight: bold;
+    font-family: cursive;
+    color: bisque;
+}
+
+nav ul li a:hover{
+    color: rgb(199, 135, 17);
+}
+
+p{
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+h2{
+    font-size: 28px;
+    font-weight: bold;
+}
+
+h4{
+    font-family:  'Courier New', Courier, monospace;
+
+}
+
+.police{
+    font-style: italic;
+}
+
+h2, h3, .partie h3, h4{
+    font-family:  'Courier New', Courier, monospace;
+}
+ul{
+    font-style: italic;
+    list-style-type: none;
+}
+
+#ia{
+    text-decoration: none;
+    font-style: italic;
+    font-weight: bold;
+    color: rgb(109, 11, 11);
+}
+#ia:hover{
+    color: beige;
+}
+
+.strat_1 img {
+    max-width: 50%;
+    height: auto;  
+}
+.donnee img {
+    max-width: 25%;
+    height: auto;  
+}
+

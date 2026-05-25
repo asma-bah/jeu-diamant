@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="fr-FR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="site parlant du jeu diamant">
+        <meta name="identifiant" content="concretisation" >
+        <title>JeuDiamant</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <header>
+            <h1>Développement du jeu</h1>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="index.html"> Présentation </a></li>
+                <li><a href="jeu.html">Développement</a></li>
+                <li><a href="ia.html"> IA </a></li>
+                <li><a href="nous.html">A propos !</a></li>
+            </ul>
+        </nav>
+        <main>
+            <h2>Mise en place des nos idées:</h2>
+            <p class="idée">
+                Avant de commencer à développer notre code, nous avons pris quelques jours pour mieux comprendre le fonctionnement du jeu. 
+                Ensuite, nous avons échangé nos idées et avons commencé à mettre en place les sous-programmes nécessaires pour l'implantation 
+                et le bon fonctionnement du jeu. <br>
+            </p>
+            
+            <h2 id="programme">Nos sous programmes:</h2>
+
+            <h4>- Class Joueur</h4>
+            <p class="police">
+                Répresente un joueur et contient : <br>
+                => son nom, <br>
+                ==> son sac ,<br>
+                ==>son coffre,  <br>
+                ===> sa stratégie
+            </p>
+
+            <h4> - Class Strategy Humain</h4>
+            <p class="police">-- Permet à l'utilisateur de saisir sa décision lui-même</p>
+
+            <h4>- Tirage d'une carte</h4>
+            <p class="police">-- Fonction qui retourne une carte tirée au hasard dans le tas de carte</p>
+
+            <h4>- Est pieger</h4>
+            <p class="police">-- Fonction boolèenne qui retourne True si il y a eu un piège ou False sinon</p>
+
+            <h4>- Partage gain</h4>
+            <p class="police"> -- Permet de partager les gains après tirage de la carte  </p>
+
+            <h4>- Partie d'une manche</h4>
+            <p class="police">
+                -- Ce sous programme permet de joueur une partie d'une manche, c'est-à-dire: 
+            </p>
+            <ul>
+                <li> =>tirage de carte </li>
+                <li>==>prise de décisions des joueurs </li>
+                <li>===> mise à jour de la liste des joueurs </li>
+                <li>====> partage des gains </li>
+                <li>=====>Suppresion des cartes pièges à la fin de la manche </li>
+                <li>======>Mise des gains dans le coffre après la manche </li>
+            </ul>
+            
+
+            <h4> - Jeu </h4>
+            <p class="police">
+                -- Prend en argument la liste et le nombre des joueurs et <br> 
+                -- il permet de jouer au jeu Diamant en demandant à l'utilisateur le nombre de participant.
+            </p>
+
+            <br><br>
+            <h2>Test de nos sous programmes:</h2>
+            <p >
+                Après codage de nos fonctions nous avons utiliser la Strategie humain pour simuler des joueurs. Au début y avait trop d'erreur, par exemple il y avait: <br>
+                <i>=> incohérence dans le partage des gains,</i> <br>
+                <i>==> problème avec la mise à jour de la liste des joueurs restants ,</i><br>
+                <i>===> difficulté à gérer les réliques, </i><br><br>
+                Par la suite, nous nous sommes rendu compte que certaines de nos fonctions n'allaient pas nous servir comme la fonction 
+                booléenne qui nous permettait de savoir si une manche est terminée ou pas (s'ils ont rencontré des pièges ou bien, ils ont 
+                tous décidé de sortir) puisque par après, <br> nous avons constaté que dans notre fonction partie_manche() nous pouvions juste 
+                ajouter un booléen que nous initialiserons à <b><em>"True"</em></b> pour dire que nous sommes en début de manche et faire une 
+                boucle <b><em>"While"</em></b> et à l'intérieur faire nos différents traitements. De ce fait, nous avons changé notre fonction 
+                partie_manche() qui n'était pas vraiment top et c'est tant mieux, car nous avons puis optimiser notre programme et éviter des 
+                appels de fonction inutile en faisant recours à des variables booléennes. <br><br> Nous avons aussi codé d'autres fonctions 
+                comme ramasseRelique() :
+            </p>
+                
+            <div> <img src="code.PNG" alt="la fonction ramasseRelique"> </div>
+            <p>
+                Cette fonction retourne la valeur entière d'une carte relique si elle a été ramassée (que nous avons notée par relique sol dans le code), <br>et cette fonction facilite ainsi la collecte des réliques si un seul joueur décide de sortir <br>
+                <br><br>
+                Après le test et la correction de nos fonctions, nous sommes passés à l'implantation de la stratégie de  <a href="ia.html" id="ia">l'intelligence artificielle.</a>
+             </p>
+            
+        </main>
+        <footer>
+            <p>&copy; Projet de Concrétisation 2023-2024,
+                université d'angers
+            </p>
+        </footer>
+    </body>
+</html>

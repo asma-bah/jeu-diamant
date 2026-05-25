@@ -1,0 +1,122 @@
+
+<!DOCTYPE html>
+<html lang="fr-FR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="site parlant du jeu diamant">
+        <meta name="identifiant" content="concretisation" >
+        <title>Jeu Diamant</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <header>
+            <h1>Projet de concretisation: "jeu diamant"</h1>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="index.html"> Présentation </a></li>
+                <li><a href="jeu.html">Développement</a></li>
+                <li><a href="ia.html"> IA </a></li>
+                <li><a href="nous.html">A propos !</a></li>
+            </ul>
+        </nav>
+        <main>
+            <h2>Le Jeu Diamant:</h2>
+            <p>
+                Le jeu Diamant est un jeu de société qui emmène les joueurs en expédition dans cinq grottes réputées pour ses pierres
+                précieuses, mais également pour ses pièges redoutables. Basés sur le principe <b>"Stop"</b> ou <b>"Encore"</b>, 
+                ils s'aventurent dans les profondeurs de la grotte et décident, pas après pas, de continuer leurs chemins ou de sortir
+                pour mettre leurs trésors à l'abri.
+            </p>
+
+            <h2>Un joueur:</h2>
+            <p>
+                Pour programmer le jeu Diamant, il fallait impérativement trouver les variables nécessaires pour bien représenter un 
+                joueur. <br> Il faut pouvoir stoker ses gains après chaque manche afin de trouver le gagnant à la fin, mais aussi lui 
+                donner un nom pour le distinguer des autres joueurs présents. Alors, c'est de là que nous ait venu l'idée de créer une 
+                "class" dans le but de représenter plus simplement un joueur avec les variables suivantes :
+            </p>
+            <ul>
+                <li>=> un nom</li>
+                <li>==> un entier pour stocker ses gains avant la sortie </li>
+                <li>===> une liste d'entier qui contient les gains après chaque manche</li>
+                <li>====> une stratégie de décision </li>
+                <li>=====> un booléen qui premet de savoir sa situation actuelle (actif ou inactif durant une manche)</li>
+            </ul>
+            
+
+            <br><br>
+            <h2>Aperçu et but du jeu:</h2>
+            <p>
+                Les joueurs explorent la grotte d'un pas prudent. À chacune de leurs avancées, ils découvrent d'autres parties 
+                mystérieuses de la grotte et ramassent les rubis trouvés sur leur chemin. Ils décident ensuite s'ils veulent sortir 
+                pour mettre en sécurité tous leurs trésors dans leur coffre, ou s'ils préfèrent continuer l'expédition en s'enfonçant 
+                dans les profondeurs de la grotte à leurs risques et périls ! S'ils tombent dans un piège déjà tiré dans cette partie 
+                de la manche, ils se précipiteront vers la sortie en laissant derrière eux toutes leurs trouvailles et rentreront les 
+                mains vides. Ils peuvent s'aventurer assez loin dans la grotte pour ramasser le plus de rubis possible.<br> <br> Le 
+                joueur assez malin décide de sortir à temps avant de rencontrer un piège et de récupérer tous les rubis qui sont restés 
+                au sol jusque-là.<br>Bien entendu, le joueur ayant le plus de rubis dans son coffre à la fin de la partie sera le gagnant.
+                
+            </p>
+            
+
+            <h2>Les cartes:</h2>
+            <p>
+               Il y a 35 cartes dans le paquet reparti en trois types dans le jeu diamant dont : <b>15 rubis, 5 réliques et 15 pièges. </b>
+            </p>
+            <h4>- Rubis:</h4>
+                15 rubis de valeur : 1,2,3,4,5,5,7,7,9,11,11,13,14,15,17 
+            <div>
+                <img src="carte1.jpg" alt="exemple de carte rubis">
+            </div>
+            <p>
+                Les rubis (de type entier) indiquent le nombre de pierres précieuses que vous trouvez à cet endroit de la grotte.<br> 
+                Elles se partagent entre les joueurs encore présents dans la grotte et le reste se met au sol (rubis au sol). 
+            </p>
+
+            <h4> - Pièges:</h4>
+                15 cartes pièges (3 cartes de chaque type)
+            <div>
+                <img src="carte2.jpg" alt="photo des cartes dangers">
+            </div>
+            <p>
+                Les cartes pièges indiquent les dangers qui se trouvent dans la grotte. <br> Méfiez-vous donc des puits de lave, des boulets, 
+                des serpents, des pics et des araignées géantes.<br> Chaque piège est présent en trois exemplaires.
+            </p>  
+            <h4>- Reliques:</h4>
+            5 cartes reliques (qui valent 5, 7, 8, 10 et 12 rubis)
+            <div class="relique">
+                <img src="diamant-reliques.jpg" alt="exemple d'une relique">
+            </div>
+            <p>
+                Les reliques resteront dans le paquet pour la manche suivante si elles ne sont pas ramassées.<br> Il peut donc y avoir plusieurs 
+                reliques dans le paquet au fur et à mesure des manches.<br> Par contre, les reliques sont insérées dans le paquet au rythme d'une 
+                par manche. <br> Première manche, on ajoute la relique de 5, deuxième manche, on ajoute la relique de 7, etc.
+            </p>
+
+            <h2>Déroulement d'une partie:</h2>
+            <p class="partie">
+                Une partie se déroule en cinq manches correspondant aux cinq grottes. Chaque manche se compose d'une succession d'avancées dans la grotte et de décisions des joueurs.
+            </p>
+            <h3>Déroulement d'une manche:</h3>
+            <p>
+                Une manche s'effectue en trois étapes et toujours de la même manière : 
+            </p>
+            <ul>
+                <li>=> Tirage d'une carte </li>
+                <li>==>Partage des gains </li>
+                <li>===> Décision des joueurs </li>
+            </ul>
+            <p>
+                Elle se termine lorsque tous les joueurs décident de sortir ou bien qu'une même carte piège a été tirée.
+                <br><br>
+                La partie se termine lorsque l'on a atteint la dernière (cinquième) manche. Le joueur ayant le score le plus élevé 
+                est déclaré vainqueur. En cas d'égalité,<br> les ex-æquos se partagent la victoire.
+            </p>
+            <br><br><br>
+        </main>
+        <footer>
+            <p>&copy; Projet de Concrétisation 2023-2024, université d'angers</p>
+        </footer>
+    </body>
+</html>
